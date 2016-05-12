@@ -1,0 +1,11 @@
+{
+  "name": "01angular-examples",
+  "description": "Getting started with Angular application",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
