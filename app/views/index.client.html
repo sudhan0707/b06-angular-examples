@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contacts">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts App</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+
+<table class="table" ng-controller="contactController">
+    <thead>
+        <tr >
+            <th ng-repeat="header in contactIt.header">{{header | labelCase}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in contactIt.contacts">
+            <td ng-repeat ="(k,v) in contact ">{{v | uppercase}}</td>
+        </tr>
+    </tbody>
+
+</table>
+<!--Vendor Dependencies-->
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<!--Application Dependencies-->
+<script src="../contact.client.config.js"></script>
+<script src="../controllers/contact.client.controller.js"></script>
+<script src="../services/contact.client.service.js"></script>
+<script src="../filters/contact.client.filter.js"></script>
+</body>
+</html>
