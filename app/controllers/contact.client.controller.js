@@ -9,5 +9,17 @@ angular
         var _contactIt = {};
         _contactIt.contacts = contactService.contacts;
         _contactIt.header = Object.keys(contactService.contacts[0]);
-        $scope.contactIt = _contactIt;
+        $scope._contactIt = _contactIt;
+    })
+    .controller('createController', function($scope){
+        $scope.submit = function(person){
+            console.log("called within Create controller");
+            console.log(person);
+        }
+    })
+    .controller('updateController', function($scope){
+        $scope.submit = function(person){
+            console.log("called within Update controller");
+            console.log(person);
+        }
     });

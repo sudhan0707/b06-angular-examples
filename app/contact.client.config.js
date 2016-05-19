@@ -3,4 +3,4 @@
  */
 'use strict';
 
-angular.module('contacts', []);
+angular.module('contacts', ['ui.router']);

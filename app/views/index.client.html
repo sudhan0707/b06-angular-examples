@@ -6,26 +6,39 @@
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">Contacts</a>
+        </div>
 
-<table class="table" ng-controller="contactController">
-    <thead>
-        <tr >
-            <th ng-repeat="header in contactIt.header">{{header | labelCase}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="contact in contactIt.contacts">
-            <td ng-repeat ="(k,v) in contact ">{{v | uppercase}}</td>
-        </tr>
-    </tbody>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="create">Create <span class="sr-only">(current)</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="update">Update</a></li>
+                <li ui-sref-active="active"><a ui-sref="display">Display</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div ui-view></div>
 
-</table>
 <!--Vendor Dependencies-->
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
 <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!--Application Dependencies-->
 <script src="../contact.client.config.js"></script>
+<script src="../contact.client.routes.js"></script>
 <script src="../controllers/contact.client.controller.js"></script>
 <script src="../services/contact.client.service.js"></script>
 <script src="../filters/contact.client.filter.js"></script>
