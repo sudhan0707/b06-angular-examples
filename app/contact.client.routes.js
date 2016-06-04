@@ -11,6 +11,7 @@ angular
         $stateProvider
             .state('home',{
                 url:'/',
+                controller:'homeController',
                 templateUrl:'home.client.tpl.html'
             })
             .state('create',{
@@ -25,6 +26,6 @@ angular
             })
             .state('display',{
                 url:'/display',
-                template: 'Display content here!!!'
+                templateUrl: 'displayContact.client.tpl.html'
             })
     });

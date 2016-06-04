@@ -1,0 +1,23 @@
+
+<div class="container" ng-controller ="displayController">
+<h1>Display contact Info</h1>
+    <test-directive></test-directive>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+
+    <!-- Table -->
+    <table class="table">
+        <thead ng-model="person">
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="contact in contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.age}}</td>
+        </tr>
+    </table>
+</div>
+</div>

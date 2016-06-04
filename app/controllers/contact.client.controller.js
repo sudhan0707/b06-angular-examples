@@ -5,21 +5,31 @@
 
 angular
     .module('contacts')
-    .controller('contactController', function($scope, contactService){
-        var _contactIt = {};
-        _contactIt.contacts = contactService.contacts;
-        _contactIt.header = Object.keys(contactService.contacts[0]);
-        $scope._contactIt = _contactIt;
-    })
-    .controller('createController', function($scope){
+    .controller('createController', function($scope, contactService){
         $scope.submit = function(person){
-            console.log("called within Create controller");
-            console.log(person);
+           contactService.save(angular.copy(person));
+            $scope.person = {};
         }
+
     })
-    .controller('updateController', function($scope){
+    .controller('updateController', function($scope, contactService){
+
+        $scope.$watch('person.name', function(newVal, oldVal){
+            $scope.person = contactService.search(newVal);
+        })
+
         $scope.submit = function(person){
             console.log("called within Update controller");
             console.log(person);
         }
-    });
+    })
+    .controller('displayController', function($scope, contactService){
+        $scope.contacts = contactService.display();
+        $scope.person = {};
+        $scope.person.name = "Smith";
+    })
+    .controller('homeController', function($scope){
+        $scope.person = {};
+        $scope.person.name = "John";
+    })
+;
