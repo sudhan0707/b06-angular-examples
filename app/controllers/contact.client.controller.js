@@ -6,6 +6,15 @@
 angular
     .module('contacts')
     .controller('createController', function($scope, contactService){
+
+        $scope.contacts = {
+            firstName : ['John', 'text'],
+            lastName: ['Smith', 'text'],
+            email: ['', 'email'],
+            phone: ['','tel'],
+            website: ['','url'],
+            address:['','text']
+        };
         $scope.submit = function(person){
            contactService.save(angular.copy(person));
             $scope.person = {};
